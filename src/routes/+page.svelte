@@ -1,3 +1,9 @@
+<script lang="ts">
+	import CodeSnippetCards from "../codeSnippetCards.svelte";
+</script>
+
+
+
 <div class="flex justify-center">
 	<div class="grid grid-cols-1 gap-4 min-w-full md:min-w-[750px]">
 		<h3 class= "text-center py-4">Create A Code Snippet</h3>
@@ -20,10 +26,11 @@
 			</label>
 		</div>
 
-		<div class="text-center py-6">
+		<div class="text-center py-5">
 			<h3>My Code Snippets</h3>
+			
 		</div>
-
+		<CodeSnippetCards></CodeSnippetCards>
 	</div>
 
 
