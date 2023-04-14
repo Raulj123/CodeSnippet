@@ -49,4 +49,5 @@
 		<CodeSnippetCard snippet={snippet} index ={index} />
 		{/each}
 	</div>
+
 </div>

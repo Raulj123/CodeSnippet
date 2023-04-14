@@ -23,5 +23,5 @@
 		
 	</svelte:fragment>
 	<slot />
-	
+	<footer class="text-center py-5">Made with 💛  by Raul</footer>
 </AppShell>
