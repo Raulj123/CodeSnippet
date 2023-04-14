@@ -20,7 +20,7 @@
 
 <div class="flex justify-center">
 	<div class="grid grid-cols-1 gap-4 min-w-full md:min-w-[750px]">
-		<h2 class= "text-center py-4">Create A Code Snippet</h2>
+		<h3 class= "text-center py-4">Create A Code Snippet</h3>
 		<div class="card p-5 w-full text-token space-y-4">
 			<label class="label">
 				<span>Snippet Title</span>
