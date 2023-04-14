@@ -1,32 +1,17 @@
 <script lang="ts">
 	
 	import CodeSnippetCard from "../codeSnippetCards.svelte";
-	import { snippetStore } from "../snippetStore";
-
+	import { addSnippet, snippetStore } from "../snippetStore";
+	import type { PageData } from "./$types";
+	export let data : PageData
+	
 	let formData : CodeSnippetInput = {
         title: "",
 	    language: "HTML",
 	    code: ""
     }
 	
-	snippetStore.set(
-		[
-			{
-				
-				title:"Raul",
-				language: "html",
-				code: "<div>hi</div>",
-				favorite: true
-			},
-			{
-				
-				title:"Katherine",
-				language: "html",
-				code: "<div>hi</div>",
-				favorite: true
-			}
-		]
-	)
+	snippetStore.set(data.snippets);
 	
 </script>
 
@@ -53,6 +38,7 @@
 				<p>Code Snippet</p>
 			<textarea class="textarea" rows="4" placeholder="Enter your snippet code here.."bind:value={formData.code}></textarea>
 			</label>
+			<button type="button" class="btn btn-small variant-filled-primary" on:click={()=>addSnippet(formData)}>Create Snippet</button>
 		</div>
 
 		<div class="text-center py-5">
