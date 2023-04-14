@@ -9,7 +9,7 @@ export const load =(()=>{
 				title:"Raul",
 				language: "html",
 				code: "<div>hi</div>",
-				favorite: true
+				favorite: false
 			},
 			{
 				
