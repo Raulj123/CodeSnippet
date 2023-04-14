@@ -1,6 +1,35 @@
 <script lang="ts">
-	import CodeSnippetCards from "../codeSnippetCards.svelte";
+	
+	import CodeSnippetCard from "../codeSnippetCards.svelte";
+	import { snippetStore } from "../snippetStore";
+
+	let formData : CodeSnippetInput = {
+        title: "",
+	    language: "HTML",
+	    code: ""
+    }
+	
+	snippetStore.set(
+		[
+			{
+				
+				title:"Raul",
+				language: "html",
+				code: "<div>hi</div>",
+				favorite: true
+			},
+			{
+				
+				title:"Katherine",
+				language: "html",
+				code: "<div>hi</div>",
+				favorite: true
+			}
+		]
+	)
+	
 </script>
+
 
 
 
@@ -10,11 +39,11 @@
 		<div class="card p-5 w-full text-token space-y-4">
 			<label class="label">
 				<span>Snippet Title</span>
-				<input class="input" type="text" placeholder="Enter title here.."/>
+				<input class="input" type="text" placeholder="Enter title here.." bind:value={formData.title}/>
 			</label>
 			<label class="label">
 				<span>Programming Language</span>
-				<select class="select">
+				<select class="select"bind:value={formData.language}>
 					<option value="HTML">HTML</option>
 					<option value="css">CSS</option>
 					<option value="Ts">TypeScript</option>
@@ -22,7 +51,7 @@
 			</label>
 			<label class="label">
 				<p>Code Snippet</p>
-			<textarea class="textarea" rows="4" placeholder="Enter your snippet code here.."></textarea>
+			<textarea class="textarea" rows="4" placeholder="Enter your snippet code here.."bind:value={formData.code}></textarea>
 			</label>
 		</div>
 
@@ -30,15 +59,8 @@
 			<h3>My Code Snippets</h3>
 			
 		</div>
-		<CodeSnippetCards></CodeSnippetCards>
+		{#each $snippetStore as snippet, index}
+		<CodeSnippetCard snippet={snippet} index ={index} />
+		{/each}
 	</div>
-
-
-
-
-
-
-
-
-
 </div>
